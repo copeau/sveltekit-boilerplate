@@ -6,6 +6,7 @@
 {#if $page.data.session}
   <nav>
     <img
+      width="40px"
       src={$page.data.session?.user?.image ?? "https://i.pravatar.cc/300"}
       alt="User Avatar"
     />
@@ -13,7 +14,7 @@
   </nav>
 {:else}
   <div>
-    <img src="/favicon.ico" alt="Company Logo" />
+    <img width="40px" src="/favicon.ico" alt="Company Logo" />
     <button on:click={signIn}>sign in</button>
   </div>
 {/if}

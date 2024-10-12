@@ -5,16 +5,25 @@
 
 {#if $page.data.session}
   <nav>
-    <img
-      width="40px"
-      src={$page.data.session?.user?.image ?? "https://i.pravatar.cc/300"}
-      alt="User Avatar"
-    />
-  <button on:click={signOut}>sign out</button>
+    <div>
+      <img
+        width="40px"
+        src={$page.data.session?.user?.image ?? "https://i.pravatar.cc/300"}
+        alt="User Avatar"
+      />
+      <strong>
+        {$page.data.session?.user?.name}
+      </strong>
+    </div>
+    <div>
+      <button on:click={signOut}>sign out</button>
+    </div>
   </nav>
 {:else}
   <div>
     <img width="40px" src="/favicon.ico" alt="Company Logo" />
+  </div>
+  <div>
     <button on:click={signIn}>sign in</button>
   </div>
 {/if}
